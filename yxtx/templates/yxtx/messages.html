@@ -1,0 +1,79 @@
+{% extends 'yxtx/base.html' %}
+{% load static  %}
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'messages/css/message.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'messages/js/message.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+    <header>
+        <div class="contain">
+            <p style="text-align: center ; font-size: 0.6rem;padding-top: 0.3rem;">消息</p>
+        </div>
+    </header>
+
+    <div  id="messBody"  >
+        <div id="messBody_up">
+            <div>
+                <a  href="">
+                    <dl>
+                        <dt><img src="/static/advertisement/mess1.png" style="width: 1.2rem;height: 1.2rem;margin: 0.1rem;margin-left: 0.2rem;"></dt>
+                        <dd>通知消息</dd>
+                    </dl>
+                </a>
+                <a  href="">
+                    <dl>
+                        <dt><img src="/static/advertisement/mess2.png" style="width: 1.2rem;height: 1.2rem;margin: 0.1rem;margin-left: 0.2rem;"></dt>
+                        <dd>互动消息</dd>
+                    </dl>
+                </a>
+                <a  href="">
+                    <dl>
+                        <dt><img src="/static/advertisement/mess1.png" style="width: 1.2rem;height: 1.2rem;margin: 0.1rem;margin-left: 0.2rem;"></dt>
+                        <dd>活动消息</dd>
+                    </dl>
+                </a>
+                <a href="">
+                    <dl>
+                        <dt><img src="/static/advertisement/mess2.png" style="width: 1.2rem;height: 1.2rem;margin: 0.1rem;margin-left: 0.2rem;"></dt>
+                        <dd>关注消息</dd>
+                    </dl>
+                </a>
+
+
+            </div>
+
+        </div>
+
+        <div id="messBody_middle">
+            {% for item in grouplists %}
+                <div class="message_group" ShopId = "{{ item.shopId }}"  userTo = "{{ item.userTo }}" style="width: 100%;
+                        background: white;
+                        height: 2.2rem;
+                        margin-bottom: 0.15rem;
+                        border-radius: 0.2rem;">
+                    <div style="margin: 0.18rem;">
+                        <img src="/static/mdeia/{{ item.userTo }}.png" style="width: 1.6rem;
+                        height: 1.6rem;border-radius: 0.2rem">
+                    </div>
+                    <div style="padding-top: 0.3rem;padding-left: 0.3rem;width: 5.9rem;">
+                        <p style="font-size: 0.55rem;font-weight: 600;">{{ item.toName }}</p>
+                        <p style="font-size: 0.4rem;color: gray;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;">安全提醒,涉及金钱交易请勿小心对待。</p>
+                    </div>
+                    <div style="padding-top: 0.1rem">
+
+                        <img src="/static/course/{{ item.shopId }}.png" style="width: 1.5rem;height: 2rem;border-radius: 0.1rem;">
+
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+
+
+
+        </div>
+
+
+{% endblock base %}

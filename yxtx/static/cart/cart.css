@@ -1,0 +1,129 @@
+
+
+#cart_body{
+    margin-top: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+#cart_foot{
+    padding: 0.3rem;
+    position: fixed;
+    bottom: 1.5rem;
+    border-top: 0.1px solid #9b9b9b;
+    border-bottom: 0.1px solid #9b9b9b;
+    background: white;
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#cart_foot .contain_left{
+    display: flex;
+}
+#cart_foot .contain_left .allischoose{
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.8px solid gray;
+    border-radius: 0.5rem;
+    margin: 0.1rem;
+
+}
+#cart_foot .contain_right #jiesuan{
+    background: yellow;
+    color: white;
+    font-weight: bolder;
+    width: 2.5rem;
+    height: 1.1rem;
+    border: none;
+    border-radius: 1rem;
+}
+#cart_foot .contain_right .font_right{
+    font-size: 0.5rem;
+    color: red;
+    font-weight: bolder;
+}
+#cart_body .container{
+    width: 100%;
+    height: 4rem;
+    background: white;
+    border-radius: 0.3rem;
+    margin-bottom: 0.1rem;
+}
+
+#cart_body .container .contain_up{
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 0.1rem;
+    justify-content: left;
+}
+#cart_body .container .cart_contain .ischoose{
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.8px solid gray;
+    border-radius: 0.5rem;
+    margin: 0.1rem;
+}
+#cart_body .container .contain_up .tu{
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.8px solid gray;
+    border-radius: 0.5rem;
+    margin: 0.1rem;
+}
+#cart_body .container .contain_up .name{
+    font-weight: bolder;
+    color: lightcoral;
+}
+#cart_body .container .cart_contain{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cart_body .container .cart_contain .img img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.1rem;
+    margin: 0.2rem;
+
+
+}
+#cart_body .container .cart_contain button{
+    width: 2rem;
+    height: 2.5rem;
+    background: red;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    color: white;
+    border: none;
+}
+#cart_body .container .cart_contain .cart_info .biao{
+    padding: 0.1rem;
+    font-size: 0.3rem;
+    font-weight: bolder;
+    background: yellow;
+    width: 2rem;
+    border-radius: 0.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

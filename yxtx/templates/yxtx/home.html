@@ -1,0 +1,56 @@
+{% extends 'yxtx/base.html' %}
+{% load static %}
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'home/js/home.js' %}"></script>
+{% endblock linkscript %}
+
+
+
+
+{% block base %}
+    <header>
+        <div class="container">
+            <form action="" class="parent">
+                <input type="text" class="search" placeholder="请您输入大学名称" style="font-size: 0.45rem;padding: 0.5rem;" >
+                <input type="submit" name="" id="" value="搜索" class="btn" style="
+                                                                                        top: 0rem;
+                                                                                        height: 1.2rem;
+                                                                                        width: 1.5rem;
+                                                                                        left: 6.89rem;
+                                                                                        font-size: 0.5rem;">
+            </form>
+        </div>
+    </header>
+
+
+    <div id="home" style="padding-top: 2.6rem;padding-bottom: 1.5rem">
+        {% for item in courseList %}
+            <ul ga="{{ item.orderId }}" class="info_click" style="background: white;border-radius: 0.3rem;margin: 0.15rem;border-top: 0.01rem solid #808080d1;">
+                <li style="padding: 0.2rem;border-bottom: 0.02rem solid #808080d1;">
+                    <img src="/static/mdeia/{{ item.userphone }}.png" style="width: 1rem;height: 1rem;border-radius: 50%" >
+                    <span>{{ item.userName }}</span>
+                    <span style="float: right;font-size: 0.8rem;color: red;">{{ item.price }}元</span>
+                </li>
+                <li style="padding: 0.2rem;border-bottom: 0.02rem solid #808080d1;">
+                    <div style="float: left;">
+                        <img src="/static/course/{{ item.orderId }}.png" style="margin-right: 0.3rem;width: 3rem;height: 3rem;border-radius:0.1rem" >
+                    </div>
+                    <div style="height: 3rem">
+                        <p>科目：{{ item.publish_type }}</p>
+                        <p>简短介绍：</p>
+                        <p style="margin-top: 0.2rem;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> {{ item.publish_text }} </p>
+                    </div>
+
+                </li>
+                <li style="padding: 0.2rem;padding-top: 0.1rem;height: 0.9rem;">
+                    <span style="float: right">{{ item.date }}</span>
+                </li>
+
+            </ul>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock base %}

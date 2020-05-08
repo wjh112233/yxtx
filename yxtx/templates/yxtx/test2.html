@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/swiper.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/reset.css'%}" />
+
+
+    <script type="text/javascript" charset="utf-8" src="{% static 'main/js/jquery-3.1.1.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'main/js/swiper.min.js' %}"></script>
+
+
+</head>
+
+<body>
+    <div id="mydiv" style="width:100px; height:100px; background:#ddd;">out</div>
+</body>
+
+<script>
+    /*设置一个长按的计时器，如果点击这个图层超过2秒则触发，mydiv里面的文字从out变in的动作*/
+    var timeout ;
+    $("#mydiv").mousedown(function() {
+        console.log("dssdsdf")
+        timeout = setTimeout(function() {
+            $("#mydiv").text("in");
+        }, 2000);
+    });
+
+    $("#mydiv").mouseup(function() {
+        clearTimeout(timeout);
+        $("#mydiv").text("out1");
+    });
+
+
+</script>
+
+</html>
+
+

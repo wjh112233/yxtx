@@ -1,0 +1,51 @@
+{% extends 'yxtx/base.html' %}
+{% load static%}
+
+{% block linkscript%}
+    <link rel="stylesheet" type="text/css" href="{% static 'mine/css/login.css' %}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'mine/js/login.js' %}" ></script>
+{% endblock linkscript%}
+
+
+{% block base %}
+<div id="login">
+
+    <a href="/mine/"><p id="ret">&lt;返回</p></a>
+    <div id="box" style="padding: 1.6rem;padding-top: 1rem;">
+        <form class="form-horizontal" role="form" action="/login/" method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="firstname" class=" control-label">号码：</label>
+            <div style="width: 6rem;float: right;">
+              <input type="text" class="form-control" id="firstname" placeholder="请输入您的手机号"
+                     name="userphone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastname" class=" control-label">密码：</label>
+            <div style="width: 6rem;float: right;">
+              <input type="password" class="form-control" id="inputPassword" placeholder="请输入密码"
+               name="userPasswd">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+              <button type="submit" class="btn btn-default" style="background: yellow;">登录</button>
+            </div>
+
+            <div style="margin-top: -0.9rem;margin-left: 5rem;">
+              <button type="button" class="btn btn-default" style="background: yellow;">人脸登录</button>
+            </div>
+
+          </div>
+        </form>
+
+    </div>
+</div>
+{% endblock base %}
+
+
+
+
+

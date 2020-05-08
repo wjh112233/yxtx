@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+
+    <link rel="stylesheet" type="text/css" href="/static/main/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="/static/identification/identification.css" />
+    <script type="text/javascript" src="/static/config/conf.json"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/identification/identification.js"></script>
+
+    <title>资质认证</title>
+
+</head>
+<body>
+<div id="register">
+    <div id="header">
+
+        <a href="/mine/"><span id="retu">< 返回</span></a>
+
+        <span id="right">资质认证</span>
+
+    </div>
+
+    <div class="body">
+        <div class="bodybody">
+            <form action="/identification/1/" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                <div class="input-group">
+                    <span class="input-group-addon">身份证：</span>
+                    <input id="accunt" name="idcard" type="text" class="form-control" placeholder="请输入您的身份证号" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">学历：</span>
+                    <select class="form-control" name="xueli">
+                        <option>本科</option>
+                        <option>硕士</option>
+                        <option>博士</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" >是否有过授课经验：</span>
+                    <select class="form-control" name="experience">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">能授哪些课程：</span>
+                    <input id="accunt" name="cancourse" type="text" class="form-control" placeholder="请输入自己授课范围" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" >填写相关专业证书：</span>
+                    <input id="accunt" type="text" name="majorqualied" class="form-control" placeholder="请输入填写自己的证书"  aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">请上传证书：</span>
+                    <input id="accunt" multiple type="file" class="form-control"   aria-describedby="basic-addon1">
+                </div>
+
+                <div class="footer">
+                    <div>
+                        <button type="submit">认证</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

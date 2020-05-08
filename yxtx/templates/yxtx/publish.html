@@ -1,0 +1,57 @@
+{% extends 'yxtx/base.html' %}
+{% load static  %}
+
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'publist/css/publish.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'publist/js/publish.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+    <p id="flag2" style="display: none">{{ flag }}</p>
+
+    <div id="publish">
+        <form role="form" id="pub_text" action="/publish_submit/" method="post" enctype="multipart/form-data">
+
+            <ul style="margin-top: 0.3rem;">
+                <li style="font-size: 0.5rem;"> <a href="/mine/" >取消</a></li>
+                <li style="font-weight: 800;">发布</li>
+                <li style="    background: yellow;border-radius: 0.6rem;"><input type="submit"  value="发布" style="border: none;background: yellow;"></li>
+            </ul>
+
+
+          <div class="form-group" id="publish_div">
+              <textarea class="form-control" name="publish_text" placeholder="课程介绍！！！！"  rows="100" style="font-size: 0.6rem;"></textarea>
+          </div>
+
+          <ol id="upload_img" style="display:inline-block">
+              <li id="imgs"></li>
+              <li  style="background: url('/static/advertisement/h1.png') no-repeat; background-size: cover">
+                  <input required="required" type="file" multiple id="userimg" name="userImg" style="width: 3rem;height: 3rem;opacity: 0;">
+              </li>
+          </ol>
+
+            <div class="input-group" style="margin-top: 0.4rem">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span>价格：</span>
+                <input id="accunt" type="text" class="form-control" placeholder="开个价" aria-describedby="basic-addon1" name="price">
+            </div>
+            <div class="input-group" style="margin-top: 0.4rem">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-tasks"></span>类型：</span>
+{#                <input id="accunt" type="text" class="form-control"  aria-describedby="basic-addon1" name="userphone">#}
+                <select class="form-control" aria-describedby="basic-addon1" name="publish_type">
+                  <option>数学</option>
+                  <option>英语</option>
+                  <option>政治</option>
+                  <option>专业课</option>
+                </select>
+            </div>
+
+        </form>
+        <P style="text-align: center;
+                    margin: 0.8rem;
+                    color: red;">
+            {{ submitSuccess }}</P>
+    </div>
+
+
+
+{% endblock base %}

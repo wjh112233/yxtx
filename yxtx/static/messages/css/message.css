@@ -1,0 +1,51 @@
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+.contain {
+    height: 1.5rem;
+    width: 100%;
+    background: yellow;
+
+}
+#messBody{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+
+}
+#messBody_up{
+    height: 1.5rem;
+    width: 100%;
+    background: yellow;
+    padding-top: 0.2rem;
+    border-bottom-right-radius: 0.9rem;
+    border-bottom-left-radius: 0.9rem;
+
+}
+#messBody_up div {
+    background: white;
+    width: 80%;
+    height: 2rem;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+     box-shadow: 2px 6px 5px 0px darkgray
+}
+#messBody_up div a {
+    display: block;
+    float: left;
+    margin-left: 0.3rem;
+}
+#messBody_up div a  dl dd{
+    font-size: 0.4rem;
+}
+
+
+#messBody_middle{
+    margin-top: 0.9rem;
+    padding: 0.2rem;
+}
+#messBody_middle div div{
+    float: left;
+}

@@ -1,0 +1,70 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+#showorder #header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+
+    height: 1.5rem;
+    background-color: yellow;
+    color: white;
+    font-size: 0.5rem;
+    font-weight: bolder;
+    padding: 0.2rem;
+}
+#showorder #header  #right{
+    margin-left: 2.3rem;
+    font-size: 0.7rem;
+}
+#showorder #header a{
+    text-decoration: none;
+}
+#showorder  .containers .contian{
+    padding: 0.4rem 0.8rem;
+
+}
+#showorder  .containers .contian .up{
+    display: flex;
+    justify-content: left;
+    padding-left: 0.5rem;
+}
+#showorder  .containers .contian .up img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: 1px solid yellow;
+    margin-right: 0.4rem;
+}
+#showorder  .containers .contian .down{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.51);
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    margin-top: 0.2rem;
+}
+#showorder  .containers .contian .down .down1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 0.2rem;
+}
+#showorder  .containers .contian .down .down1 span{
+    font-size: 0.4rem;
+}
+#showorder  .containers .contian .down .down2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0.2rem;
+}
+#showorder  .containers .contian .down .down2 span{
+    font-size: 0.4rem;
+}

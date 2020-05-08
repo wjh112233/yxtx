@@ -1,0 +1,33 @@
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 1.5rem;
+    width: 9rem;
+    margin: 1rem auto 0 auto;
+
+}
+.parent {
+    position: relative;
+}
+.search {
+    width: 8.4rem;
+    height: 1.2rem;
+    outline: none;
+    border: 1px solid #ccc;
+    position: absolute;
+}
+.btn {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+
+    top: 6px;
+    left: 285px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}

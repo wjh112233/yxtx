@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="/static/main/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="/static/showorder/showorder.css" />
+    <script type="text/javascript" src="/static/config/conf.json"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/showorder/showorder.js"></script>
+
+    <title>查看订单</title>
+</head>
+<body>
+<div id="showorder">
+    <div id="header">
+        <a href="/mine/"><span id="retu">< 返回</span></a>
+        <span id="right">研行天下</span>
+    </div>
+
+    <div class="containers">
+
+    {% for item in showorderList %}
+        <div class="contian">
+            <div class="up">
+                <img src="\static\course\{{ item.productid }}.png" alt="">
+                <div class="fontContain">
+                    <h3 class="title">名字:{{ item.productname }}</h3>
+                    <p class="sell">卖家：<span>{{ item.sellname }}</span></p>
+                    <p class="status">状态：<span style="color: red">未完成</span></p>
+                </div>
+            </div>
+
+            <div class="down">
+                <a href="">
+                    <div class="down1">
+                        <span>我要打卡</span>
+                        <span> > </span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="down1">
+                        <span>商品追踪</span>
+                        <span> > </span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="down1">
+                        <span>我要退款</span>
+                        <span> > </span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="down2">
+                        <span>查看订单详情</span>
+                        <span> > </span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

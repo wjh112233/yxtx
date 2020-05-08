@@ -1,0 +1,81 @@
+{% extends 'yxtx/base.html' %}
+{% load static  %}
+
+{% block linkscript%}
+    <link rel="stylesheet" type="text/css" href="{% static 'cart/cart.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'cart/cart.js' %}"></script>
+{% endblock linkscript%}
+
+{% block base %}
+
+    <p style="display: none" id="flag">{{ flag }}</p>
+
+    <div id="cart_body">
+
+    {% for item in carts %}
+        <div class="container" id="{{item.productid}}div" >
+
+            <div class="contain_up">
+                <div class="tu">
+
+                </div>
+                <p class="name">{{ item.sellName }}></p>
+            </div>
+
+            <div class="cart_contain">
+                {% if item.isChose %}
+                    <div class="ischoose" id="{{item.productid}}choose" money = "{{ item.productprice }}" shopid = "{{ item.productid }}" style="background-color: red">
+
+                    </div>
+                {% else %}
+                    <div class="ischoose" id="{{item.productid}}choose" money = "{{ item.productprice }}" shopid = "{{ item.productid }}">
+
+                    </div>
+                {% endif %}
+
+
+
+                <div class="img">
+                    <img src="/static/course/{{ item.productid }}.png" alt="">
+                </div>
+
+                <div class="cart_info">
+                    <p class="type">{{ item.productname }}</p>
+                    <p class="price">价钱：￥<span class="price_yuan">{{ item.productprice }}</span>元</p>
+                    <div class="biao">春季火评周</div>
+                </div>
+
+                <button class="delete" ga="{{item.productid}}">删除</button>
+
+            </div>
+
+        </div>
+
+
+
+    {% endfor %}
+
+
+
+
+    </div>
+
+
+
+    <div id="cart_foot">
+        <div class="contain_left">
+            <div class="allischoose">
+            </div>
+            <span class="font_left">全选</span>
+
+        </div>
+
+        <div class="contain_right">
+            <span class="font_right">合计：￥<span id="summoney">{{ sumprice }}</span></span>
+
+            <a href="/order/{{ sumprice }}"><button id="jiesuan" >结算</button></a>
+
+        </div>
+    </div>
+
+{% endblock base %}

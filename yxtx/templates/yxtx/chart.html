@@ -1,0 +1,143 @@
+{% extends 'yxtx/base.html' %}
+{% load static  %}
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'chart/css/chart.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'chart/js/chart.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+    <div id="h" fromuser = "{{ from_to_user.userForm }}" touser = "{{ from_to_user.userTo }}">
+        <header>
+            <div style="text-align: center;background: white;
+            width: 100%;height: 3.5rem;padding-top: 0.2rem;
+            box-shadow: 5px 4px 4px 0px darkgray">
+                {% if flag  == 0 %}
+                    <a href="/courseInformation/{{ touser.orderId }}/" style="font-size: 0.5rem;position: absolute;top: 0.33rem;left: 0.3rem;">返回</a>
+                {% else  %}
+                   <a href="/messages/" style="font-size: 0.5rem;position: absolute;top: 0.33rem;left: 0.3rem;">返回</a>
+                {% endif %}
+
+                <span style="font-size: 0.6rem;font-weight: 500;padding-top: 0.2rem;">{{ from_to_user.toName }}</span>
+
+                <span  style="display: block;width: 100%;height: 2rem;background: white;">
+                    <img src="/static/course/{{ touser.orderId }}.png" alt="" style="height: 1.6rem;width: 1.6rem;border-radius: 0.1rem;position: absolute;
+                       left: 0.2rem;top:1.3rem">
+                    <span style="position: absolute;left: 2rem;top: 1.3rem;font-size: 0.6rem;font-weight: 500;">
+                        {{ touser.price }}元
+                    </span>
+                    <p style="position: absolute;left: 2rem;top: 2.1rem;font-size: 0.4rem;
+                    color: gray;">含运费0.0元</p>
+
+                    {% if buyer == 1 %}
+
+                            <button id="once_purchase" shopid = {{ shopId }}  style="border: none;
+                                        background: red;
+                                        font-size: 0.4rem;
+                                        color: white;
+                                        width: 2.8rem;
+                                        height: 1.4rem;
+                                        position: absolute;
+                                        top: 1.5rem;
+                                        right: 0.4rem;
+                                        ">
+                            立即下单
+                           </button>
+
+
+                    {% else %}
+
+                            <button id="once_purchase" style="border: none;
+                                        background: yellow;
+                                        font-size: 0.4rem;
+                                        color: black;
+                                        width: 2.8rem;
+                                        height: 1.4rem;
+                                        position: absolute;
+                                        top: 1.5rem;
+                                        right: 0.4rem;
+                                        ">
+                            修改订单
+                           </button>
+
+
+                    {% endif %}
+
+
+
+                </span>
+            </div>
+
+
+        </header>
+
+
+
+
+    </div>
+
+    <div id="middle" >
+
+        <ul id="chartarea">
+{#            <li>#}
+{#                <div style="float: left;">#}
+{#                    <img src="/static/mdeia/{{ from_to_user.userForm }}.png" style="width: 1.5rem;height: 1.5rem;border-radius: 0.2rem;">#}
+{#                </div>#}
+{#                <div style="margin-left: 0.3rem;float: left;width: 6.5rem;">#}
+{##}
+{#                    <p style="white-space: pre-line;background: yellow;#}
+{#                            border-radius: 0.2rem;#}
+{#                            margin-top: 0.4rem;#}
+{#                            display: inline-block;#}
+{#                            padding: 0.2rem;#}
+{#                            margin-bottom: 0.5rem;#}
+{#                            ">我是崔伊静,dkjad数据库的感到困难十大时间开始的空间的 刷卡机开发商的思考你的</p>#}
+{#                </div>#}
+{#            </li>#}
+
+{#            <li style="margin-top: 0.2rem">#}
+{#                <div style="float: right;">#}
+{#                    <img src="/static/mdeia/{{ from_to_user.userTo }}.png" style="width: 1.5rem;height: 1.5rem;border-radius: 0.2rem;">#}
+{#                </div>#}
+{#                <div style="margin-left: 0.3rem;float: right;width: 6.5rem;">#}
+{##}
+{#                    <p style="white-space: pre-line;background: yellow;#}
+{#                            border-radius: 0.2rem;#}
+{#                            margin-top: 0.4rem;#}
+{#                            margin-bottom: 0.5rem;#}
+{#                            padding: 0.2rem;#}
+{#                            margin-right: 0.2rem;#}
+{#                            ">我是崔伊静,dkjad数据库的感到困难十大时间开始的空间的 刷卡机开发商的思考你的 </p>#}
+{#                </div>#}
+{#            </li>#}
+
+        </ul>
+    </div>
+
+
+
+    <div id="f">
+
+            <textarea id="thisText" type="text" rows="20"  placeholder="想跟TA说点什么呢" style="padding: 0.2rem;
+                                height: 1.1rem;
+                                position: absolute;
+                                top: 0.2rem;
+                                left: 0.6rem;
+                                width: 7rem;
+                                border-radius: 0.5rem;" ></textarea>
+            <button id="send_message" class="btn" style="position: absolute;
+                    font-size: 0.5rem;
+                    top: 0.2rem;
+                    right: 0.6rem;
+                    background: yellow;">发送</button>
+
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}
